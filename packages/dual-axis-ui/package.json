@@ -15,7 +15,6 @@
       "types": "./lib/types/client/index.d.ts",
       "default": "./lib/client.js"
     },
-    "./src/*": "./src/*",
     "./package.json": "./package.json"
   },
   "dsh": {
@@ -36,7 +35,6 @@
   "files": [
     "lib/index.js",
     "lib/client.js",
-    "lib/client.js.map",
     "lib/types/**/*.d.ts"
   ],
   "scripts": {
