@@ -1,6 +1,9 @@
 {
   "name": "@t4r71/dsh-dual-axis-ui",
-  "version": "0.1.7-rc.2",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "双轴访问模式组合包的浏览器半边：设置页的配置行 + 输入框上方的读/写两个下拉，两面共用一个客户端插件。",
   "type": "module",
   "exports": {
@@ -33,6 +36,7 @@
   "files": [
     "lib/index.js",
     "lib/client.js",
+    "lib/client.js.map",
     "lib/types/**/*.d.ts"
   ],
   "scripts": {

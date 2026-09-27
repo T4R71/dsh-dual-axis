@@ -1,8 +1,9 @@
 # Changelog
 
-本仓库的两个包同版本发布，条目按日期倒序。版本号跟随所面向的 DeepSeek Harness 版本。
+本仓库的两个包同版本发布，条目按日期倒序。包版本独立于所面向的 DeepSeek Harness 版本：
+两个包从 `0.1.0` 起，面向的 DSH 版本写在各自的 `peerDependencies` 里（当前 `0.1.7-rc.2`）。
 
-## 2026-09-27 — 0.1.7-rc.2（首版）
+## 2026-09-27 — 0.1.0（首版）
 
 首次公开发布：[`@t4r71/dsh-dual-axis`](packages/dual-axis)（宿主半边）与
 [`@t4r71/dsh-dual-axis-ui`](packages/dual-axis-ui)（客户端半边）。
