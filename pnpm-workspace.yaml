@@ -1,0 +1,17 @@
+# 本仓库根工作区：两个待发布的包，以及 pnpm 要求先记录下来的依赖安装脚本决定。
+#
+# koffi 是 @deepseek-ai/dsh-fs-local 在 Windows 上做 JSONL 持久化（MoveFileExW 写透发布）
+# 用的 FFI 绑定，它的安装脚本负责挑本平台的预编译二进制。@deepseek-ai/dsh-fs-sandbox
+# 依赖它，所以它在本工作区的依赖闭包里；在决定被记录之前 pnpm 拒绝跑它的安装脚本，
+# `pnpm install` 以 ERR_PNPM_IGNORED_BUILDS 退出 1。
+#
+# 这条决定属于工作区根，不属于任何一个包目录：包目录里再放一份 pnpm-workspace.yaml 会被
+# 当成那个包自己的工作区根，截断 pnpm 从该目录往上的工作区根查找。
+packages:
+  - 'packages/*'
+  - 'packages/*/*'
+allowBuilds:
+  koffi: true
+  # tsx 的引擎（宿主与客户端的 `test` 脚本都用 `node --import tsx/esm`）带一个安装脚本，
+  # 未被记录之前 pnpm 同样以 ERR_PNPM_IGNORED_BUILDS 退出 1。
+  esbuild: true
